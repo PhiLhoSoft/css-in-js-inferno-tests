@@ -12,8 +12,6 @@ class Main extends Component
 		super(props);
 		this.state =
 		{
-			list: props.app.list,
-			value: props.app.value,
 		};
 	}
 
@@ -21,10 +19,10 @@ class Main extends Component
 	{
 		return (
 <div className={props.app.classNames.container}>
-	<MainSection list={state.list} appClassNames={props.app.classNames}/>
+	<MainSection list={props.app.list} appClassNames={props.app.classNames}/>
 	<div className={props.app.classNames.sideContainer}>
 		<HelpSection appClassNames={props.app.classNames}/>
-		<SecondarySection value={state.value} appClassNames={props.app.classNames}/>
+		<SecondarySection value={props.app.value} appClassNames={props.app.classNames}/>
 	</div>
 </div>
 		);

@@ -1,7 +1,7 @@
 import Inferno from 'inferno';
 import Component from 'inferno-component';
 
-//import SomeComponent from './SomeComponent';
+import SomeComponent from './SomeComponent';
 
 class MainSection extends Component
 {
@@ -14,11 +14,13 @@ class MainSection extends Component
 			classNames: { itemContainer: 'ItemContainer', button: 'Button', },
 			renderingData: {},
 		};
+		console.log(this.state.list);
 	}
 
-	renderComponentList(componentName)
+	renderComponentList()
 	{
-		return <ul>{this.state.list.map((v, i) => <li>{componentName} {i + 1}</li>)}</ul>
+		// return <ul>{this.state.list.map((v, i) => <li>{componentName} {i + 1}</li>)}</ul>
+		return this.state.list.map((v, i) => <SomeComponent item={this.state.list[i]}/>);
 	}
 
 	render(props, state)
@@ -28,7 +30,7 @@ class MainSection extends Component
 	<header className={props.appClassNames.title}>
 		<h2>Main app</h2>
 	</header>
-	{this.renderComponentList('Item')}
+	{this.renderComponentList()}
 	<button className={state.classNames.button}>Update</button>
 </section>
 		);

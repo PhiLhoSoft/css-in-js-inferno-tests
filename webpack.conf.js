@@ -1,4 +1,7 @@
 const webpack = require('webpack');
+const ExtractTextPlugin = require('extract-text-webpack-plugin');
+
+const isTest = true;
 
 module.exports =
 {
@@ -14,7 +17,21 @@ module.exports =
 	{
 		loaders:
 		[
-			{ test: /\.js$/, loader: 'babel-loader' }
+			{
+				test: /\.js$/,
+				loader: 'babel-loader',
+				exclude: /node_modules/,
+			},
+			{
+				// CSS LOADER
+				// For CSS files from modules.
+				test: /\.css$/,
+				loader:
+					isTest ?
+						'style-loader!css-loader' :
+						// Use the 'style' loader after treatment by the CSS loader (minification with source map)
+						ExtractTextPlugin.extract('style', 'css?sourceMap'),
+			},
 		]
 	},
 	devServer:

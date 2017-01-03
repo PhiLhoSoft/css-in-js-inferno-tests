@@ -44,6 +44,9 @@
     "eslint": "^2.13.1",
     "webpack": "^1.12.11",
     "webpack-dev-server": "^1.14.1",
+    "extract-text-webpack-plugin": "^1.0.1",
+    "css-loader": "^0.26.1",
+    "style-loader": "^0.13.1",
     "cross-env": "^2.0.1",
     "glob": "^7.1.1",
     "rimraf": "^2.5.4",
@@ -56,7 +59,7 @@
     "inferno-create-element": "1.0.0-beta45",
     "jquery": "^2.2.3",
     "jquery-bar-rating": "^1.2.1",
-    "pikaday": "1.5.1",
+    "flatpickr": "2.2.5",
     "tlite": "0.1.3"
   }
 }
