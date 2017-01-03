@@ -15,13 +15,13 @@ class HelpSection extends Component
 	render()
 	{
 		return (
-			<aside class="{this.state.classNames.help}">
-				<header class="{this.state.classNames.title}">
-					<h2>Help</h2>
-				</header>
-				<p>There is a main section.</p>
-				<p>And, beside this one which provides a succint help, there is also an aside controlled by a library. This paragraph is long enough to wrap...</p>
-			</aside>
+<aside className={this.state.classNames.help}>
+	<header className={this.state.classNames.title}>
+		<h2>Help</h2>
+	</header>
+	<p>There is a main section.</p>
+	<p>And, beside this one which provides a succint help, there is also an aside controlled by a library. This paragraph is long enough to wrap...</p>
+</aside>
 		);
 	}
 }

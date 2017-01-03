@@ -3,7 +3,11 @@ import Component from 'inferno-component';
 
 //import SomeComponent from './SomeComponent';
 
-function renderComponentList() { return ''; }
+function renderComponentList(componentName, componentNumber, appData, renderingData)
+{
+	const l = new Array(componentNumber).fill(0);
+	return <ul>{l.map((v, i) => <li>{componentName} {i}</li>)}</ul>
+}
 
 class MainSection extends Component
 {
@@ -15,20 +19,20 @@ class MainSection extends Component
 			list: props.list,
 			classNames: { title: props.appClassNames.title, itemContainer: 'ItemContainer', button: 'Button', },
 			itemNumber: 5,
-			renderingData: [],
+			renderingData: {},
 		};
 	}
 
 	render()
 	{
 		return (
-			<section class="{this.state.classNames.itemContainer}">
-				<header class="{this.state.classNames.title}">
-					<h2>Main app</h2>
-				</header>
-				{renderComponentList('item', this.state.itemNumber, this.state, this.state.renderingData)}
-				<button class="{this.state.classNames.button}">Update</button>
-			</section>
+<section className={this.state.classNames.itemContainer}>
+	<header className={this.state.classNames.title}>
+		<h2>Main app</h2>
+	</header>
+	{renderComponentList('item', this.state.itemNumber, this.state, this.state.renderingData)}
+	<button className={this.state.classNames.button}>Update</button>
+</section>
 		);
 	}
 }

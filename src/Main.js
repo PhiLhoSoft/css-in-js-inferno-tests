@@ -21,11 +21,13 @@ class Main extends Component
 	render()
 	{
 		return (
-			<div class={this.state.classNames.container}>
-				<MainSection list={this.state.list} appClassNames={this.state.classNames}/>
-				<HelpSection appClassNames={this.state.classNames}/>
-				<SecondarySection value={this.state.value} appClassNames={this.state.classNames}/>
-			</div>
+<div className={this.state.classNames.container}>
+	<MainSection list={this.state.list} appClassNames={this.state.classNames}/>
+	<div className={this.state.classNames.sideContainer}>
+		<HelpSection appClassNames={this.state.classNames}/>
+		<SecondarySection value={this.state.value} appClassNames={this.state.classNames}/>
+	</div>
+</div>
 		);
 	}
 }
