@@ -14,18 +14,17 @@ class Main extends Component
 		{
 			list: props.app.list,
 			value: props.app.value,
-			classNames: props.app.classNames,
 		};
 	}
 
-	render()
+	render(props, state)
 	{
 		return (
-<div className={this.state.classNames.container}>
-	<MainSection list={this.state.list} appClassNames={this.state.classNames}/>
-	<div className={this.state.classNames.sideContainer}>
-		<HelpSection appClassNames={this.state.classNames}/>
-		<SecondarySection value={this.state.value} appClassNames={this.state.classNames}/>
+<div className={props.app.classNames.container}>
+	<MainSection list={state.list} appClassNames={props.app.classNames}/>
+	<div className={props.app.classNames.sideContainer}>
+		<HelpSection appClassNames={props.app.classNames}/>
+		<SecondarySection value={state.value} appClassNames={props.app.classNames}/>
 	</div>
 </div>
 		);

@@ -13,8 +13,8 @@ const data =
 {
 	app:
     {
-        classNames: { top: 'Top', container: 'MainContainer', sideContainer: 'SideContainer', bottom: 'Bottom' },
-        list: [],
+        classNames: { top: 'Top', container: 'MainContainer', sideContainer: 'SideContainer', bottom: 'Bottom', title: 'Title' },
+        list: Array.from({ length: 5 }),
         value: 5,
     },
 }

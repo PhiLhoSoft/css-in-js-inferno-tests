@@ -8,15 +8,15 @@ class HelpSection extends Component
 		super(props);
 		this.state =
 		{
-			classNames: { title: props.appClassNames.title, help: 'Help' },
+			classNames: { help: 'Help' },
 		};
 	}
 
-	render()
+	render(props, state)
 	{
 		return (
-<aside className={this.state.classNames.help}>
-	<header className={this.state.classNames.title}>
+<aside className={state.classNames.help}>
+	<header className={props.appClassNames.title}>
 		<h2>Help</h2>
 	</header>
 	<p>There is a main section.</p>
