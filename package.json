@@ -1,0 +1,61 @@
+{
+  "name": "css-in-jss-inferno-tests",
+  "version": "0.0.1",
+  "description": "Testing several CSS-in-JS libraries in the browser. Based on the basic Inferno boilerplate",
+  "main": "src/index.js",
+  "scripts": {
+    "start": "webpack-dev-server --quiet --config webpack.conf.js --host 0.0.0.0",
+    "clean": "rimraf '{lib,dist,tests,tmp}/*'",
+    "bench": "cross-env NODE_ENV=test BENCHMARK=true karma start --single-run ",
+    "test": "cross-env NODE_ENV=test karma start --single-run ",
+    "test:watch": "cross-env NODE_ENV=test karma start",
+    "lint": "eslint ./src"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/PhiLhoSoft/css-in-js-inferno-tests.git"
+  },
+  "keywords": [
+    "inferno",
+    "boilerplate",
+    "tests",
+    "cssinjs",
+    "css-in-js",
+    "css in js",
+    "jsx"
+  ],
+  "author": "Philippe Lhoste",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/PhiLhoSoft/css-in-js-inferno-tests/issues"
+  },
+  "homepage": "https://github.com/PhiLhoSoft/css-in-js-inferno-tests#readme",
+  "devDependencies": {
+    "babel-cli": "^6.14.0",
+    "babel-core": "^6.14.0",
+    "babel-eslint": "^6.1.2",
+    "babel-loader": "^6.2.5",
+    "babel-plugin-inferno": "beta17",
+    "babel-plugin-syntax-jsx": "^6.3.13",
+    "babel-plugin-syntax-object-rest-spread": "^6.3.13",
+    "babel-plugin-transform-object-rest-spread": "^6.3.13",
+    "babel-preset-es2015": "^6.3.13",
+    "babel-preset-stage-0": "^6.3.13",
+    "eslint": "^2.13.1",
+    "webpack": "^1.12.11",
+    "webpack-dev-server": "^1.14.1",
+    "cross-env": "^2.0.1",
+    "glob": "^7.1.1",
+    "rimraf": "^2.5.4",
+    "url": "^0.11.0",
+    "inferno-devtools": "1.0.0-beta44"
+  },
+  "dependencies": {
+    "inferno": "1.0.0-beta45",
+    "inferno-component": "1.0.0-beta45",
+    "inferno-create-element": "1.0.0-beta45",
+    "jquery": "^2.2.3",
+    "jquery-bar-rating": "^1.2.1",
+    "tlite": "0.1.3"
+  }
+}
