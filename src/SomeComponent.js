@@ -1,6 +1,8 @@
 import Inferno from 'inferno';
 import Component from 'inferno-component';
 
+import BarRatingWrapper from './BarRatingWrapper';
+
 class SomeComponent extends Component
 {
 	constructor(props)
@@ -18,6 +20,7 @@ class SomeComponent extends Component
 		return (
 <div class={state.classNames.container + ' ' + (state.item.classNames ? state.item.classNames : '')}>
 	<span>{state.item.name}</span>
+	<BarRatingWrapper barLength="5" value={state.item.rating}/>
 	<label><input type="checkbox" value={state.item.value} checked={state.item.disabled}/>Disable</label>
 	<button class={state.classNames.button}>x</button>
 </div>

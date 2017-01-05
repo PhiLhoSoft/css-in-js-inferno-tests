@@ -14,12 +14,10 @@ class MainSection extends Component
 			classNames: { itemContainer: 'ItemContainer', button: 'Button', },
 			renderingData: {},
 		};
-		console.log(this.state.list);
 	}
 
 	renderComponentList()
 	{
-		// return <ul>{this.state.list.map((v, i) => <li>{componentName} {i + 1}</li>)}</ul>
 		return this.state.list.map((v, i) => <SomeComponent item={this.state.list[i]}/>);
 	}
 

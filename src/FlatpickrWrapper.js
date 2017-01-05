@@ -1,38 +1,48 @@
 import Inferno from 'inferno';
 import Component from 'inferno-component';
 
-// import pikaday from 'pikaday';
-import 'flatpickr/dist/flatpickr.css'
+import 'flatpickr/dist/flatpickr.css';
 import flatpickr from 'flatpickr/dist/flatpickr';
 
 class FlatpickrWrapper extends Component
 {
 	constructor(props)
 	{
+		// console.log('FlatpickrWrapper.constructor', props);
 		super(props);
 		this.state =
 		{
+			value: props.value,
 		};
 	}
 
-	render()
+	// Based on https://github.com/ryanflorence/react-training/blob/gh-pages/lessons/05-wrapping-dom-libs.md
+	// but also on https://github.com/coderhaoxin/react-flatpickr/blob/master/lib/index.js
+	render(props)
 	{
-		// https://github.com/ryanflorence/react-training/blob/gh-pages/lessons/05-wrapping-dom-libs.md
-		// Render an empty div
-		return <input type="text" ref={(ref) => { this.wrapper = ref; }}/>;
+		// console.log('FlatpickrWrapper.render');
+		// Render an empty div (here an input as we attach the Flatpickr to it, and it must be in the Dom already).
+		return <input type="text" ref={ref => { this.input = ref; }}/>;
 	}
 
 	componentDidMount()
 	{
-		var picker = flatpickr(this.wrapper,
+		// console.log('FlatpickrWrapper.componentDidMount', this.input);
+		this.picker = flatpickr(this.input,
 		{
 			inline: true, // show the calendar inline
-			weekNumbers: true // show week numbers
+			weekNumbers: true, // show week numbers
+			onChange: this.props.onChange,
 		});
+	}
 
-		// start a new React render tree with our node and the children
-		// passed in from above, this is the other side of the portal.
-		Inferno.render(<div>{this.props.children}</div>, this.wrapper);
+	componentWillReceiveProps(newProps)
+	{
+		// console.log('FlatpickrWrapper.componentWillReceiveProps', newProps);
+		if (newProps.value)
+		{
+			// this.picker.setDate(newProps.value)
+		}
 	}
 }
 

@@ -1,3 +1,5 @@
+/* eslint-env node */
+
 const webpack = require('webpack');
 const ExtractTextPlugin = require('extract-text-webpack-plugin');
 
@@ -17,6 +19,13 @@ module.exports =
 	{
 		loaders:
 		[
+			{
+				// Load jQuery and expose it as global variable before loading other libraries, so that they find it.
+				// Reference: https://github.com/webpack/expose-loader
+				// and http://stackoverflow.com/questions/36065931/webpack-how-to-make-angular-auto-detect-jquery-and-use-it-as-angular-element-in
+				test: require.resolve('jquery'), // Full path in node_modules
+				loader: 'expose?$!expose?jQuery'
+			},
 			{
 				test: /\.js$/,
 				loader: 'babel-loader',

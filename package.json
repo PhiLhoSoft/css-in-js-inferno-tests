@@ -47,16 +47,17 @@
     "extract-text-webpack-plugin": "^1.0.1",
     "css-loader": "^0.26.1",
     "style-loader": "^0.13.1",
+    "expose-loader": "^0.7.1",
     "cross-env": "^2.0.1",
     "glob": "^7.1.1",
     "rimraf": "^2.5.4",
     "url": "^0.11.0",
-    "inferno-devtools": "1.0.0-beta44"
+    "inferno-devtools": "^1.0.7"
   },
   "dependencies": {
-    "inferno": "1.0.0-beta45",
-    "inferno-component": "1.0.0-beta45",
-    "inferno-create-element": "1.0.0-beta45",
+    "inferno": "^1.0.7",
+    "inferno-component": "^1.0.7",
+    "inferno-create-element": "^1.0.7",
     "jquery": "^2.2.3",
     "jquery-bar-rating": "^1.2.1",
     "flatpickr": "2.2.5",
