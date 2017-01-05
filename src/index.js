@@ -10,13 +10,13 @@ if (module.hot)
 	require('inferno-devtools');
 }
 
-const itemNumber = 5;
+const itemNumber = 7;
 const data =
 {
 	app:
 	{
 		classNames: { top: 'Top', container: 'MainContainer', sideContainer: 'SideContainer', bottom: 'Bottom', title: 'Title' },
-		list: Array.from({ length: 5 }).map((v, i) =>
+		list: Array.from({ length: itemNumber }).map((v, i) =>
 		{
 			const letter = String.fromCharCode(65 + i);
 			return { name: `Item ${letter}`, value: letter.toLowerCase(), rating: (i * 32) % 5 + 1, disabled: false };

@@ -19,14 +19,14 @@ class BarRatingWrapper extends Component
 	// Based on https://github.com/ryanflorence/react-training/blob/gh-pages/lessons/05-wrapping-dom-libs.md
 	render(props)
 	{
-		console.log('B.render');
+		// console.log('B.render');
 		// Render an empty div (select here, so that barrating finds a proper host)
 		return <select ref={ref => { this.barRef = ref; }}>{this.generateOptions()}</select>;
 	}
 
 	componentDidMount()
 	{
-		console.log('B.componentDidMount', this.barRef);
+		// console.log('B.componentDidMount', this.barRef);
 		this.barRating = $(this.barRef).barrating(
 		{
 			initialRating: this.props.value,
@@ -40,7 +40,7 @@ class BarRatingWrapper extends Component
 
 	componentWillReceiveProps(newProps)
 	{
-		console.log('B.componentWillReceiveProps', newProps);
+		// console.log('B.componentWillReceiveProps', newProps);
 		// its important to pass the new props in
 		// this.renderComponent(newProps);
 		// if (newProps.value)
@@ -51,7 +51,7 @@ class BarRatingWrapper extends Component
 
 	renderComponent(props)
 	{
-		console.log('B.renderComponent', props);
+		// console.log('B.renderComponent', props);
 		// if called from `componentWillReceiveProps`, then we use the new
 		// props, otherwise use what we already have.
 		props = props || this.props;
@@ -64,7 +64,7 @@ class BarRatingWrapper extends Component
 
 	generateOptions()
 	{
- 		const list = Array.from({ length: this.props.barLength });
+		const list = Array.from({ length: this.props.barLength });
 		const options = list.map((v, i) => <option value={i + 1}>{i + 1}</option>);
 		return options;
 	}
