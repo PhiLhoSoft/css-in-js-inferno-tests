@@ -1,9 +1,7 @@
 import Inferno from 'inferno';
 import Component from 'inferno-component';
 
-import { create, SheetsRegistry } from 'jss';
-import preset from 'jss-preset-default';
-
+import jss from './JSSService';
 import BarRatingWrapper from './BarRatingWrapper';
 
 class SomeComponent extends Component
@@ -19,11 +17,8 @@ class SomeComponent extends Component
 
 		this.styleSheet = this.createStyleSheet();
 
-		const jss = create(preset());
-		const sheets = new SheetsRegistry();
-
-		const css = jss.createStyleSheet(this.styleSheet).attach();
-		this.state.classNames = [ 'container', 'button' ].reduce((m, className) => { m[className] = css.classes[className]; return m; }, {});
+		const css = jss.create(this.styleSheet);
+		this.state.classNames = css.classes;
 	}
 
 	createComponentStyle(options)
